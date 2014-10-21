@@ -1,13 +1,13 @@
 /* Default linker script, for normal executables */
-/* Modified for Android.  */
 OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm",
 	      "elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
+SEARCH_DIR("=/home/sabermod/tmp/arm-linux-androideabi-4.8/arm-linux-androideabi/lib"); SEARCH_DIR("=/usr/local/lib"); SEARCH_DIR("=/lib"); SEARCH_DIR("=/usr/lib");
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */
-  PROVIDE (__executable_start = 0x00008000); . = 0x00008000 + SIZEOF_HEADERS;
+  PROVIDE (__executable_start = 0x00010000); . = 0x00010000 + SIZEOF_HEADERS;
   .interp         : { *(.interp) }
   .note.gnu.build-id : { *(.note.gnu.build-id) }
   .hash           : { *(.hash) }
